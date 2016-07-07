@@ -1,0 +1,24 @@
+{
+  "name": "electron-workshop",
+  "version": "0.0.1",
+  "description": "Learning using Electron lib",
+  "main": "main.js",
+  "productName": "Electron App",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "package:osx": "electron-packager . --platform=darwin --arch=x64",
+    "package:win64": "electron-packager . --platform=win32 --arch=x64",
+    "package:win32": "electron-packager . --platform=win32 --arch=ia32",
+    "package:linux": "electron-packager . --platform=linux --arch=x64"
+  },
+  "author": "Esteban Coria",
+  "license": "ISC",
+  "dependencies": {
+    "electron-prebuilt": "^1.2.6",
+    "electron-reload": "^1.0.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^7.2.0"
+  }
+}
