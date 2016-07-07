@@ -5,7 +5,9 @@
   "main": "main.js",
   "productName": "Electron App",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run test:main && npm run test:renderer",
+    "test:main": "electron-mocha ./tests/main/*.spec.js --reporter spec --colors",
+    "test:renderer": "electron-mocha ./tests/renderer/*.spec.js --renderer --reporter spec --colors",
     "start": "electron .",
     "package:osx": "electron-packager . --platform=darwin --arch=x64",
     "package:win64": "electron-packager . --platform=win32 --arch=x64",
@@ -19,6 +21,8 @@
     "electron-reload": "^1.0.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "electron-mocha": "^2.2.1",
     "electron-packager": "^7.2.0"
   }
 }
